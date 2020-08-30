@@ -17,6 +17,14 @@ fun main() {
     myLion.makeNoise()
     myLion.eat()
 
+    var myCanine = Canine()
+    myCanine.roam()
+
+    var myWolf = Wolf()
+    myWolf.makeNoise()
+    myWolf.eat()
+
+    
 }
 open class Animal {
     open val image = ""
@@ -64,6 +72,26 @@ open class Feline : Animal() {
         println("คลาส feline กำลังปีนต้นไม้")
     }
 }
+open class Canine : Animal(){
+    override fun roam() {
+        println("คลาส Canine เดินบนพื้นได้เท่านั้น")
+    }
+}
+class Wolf : Canine(){
+    override val image = "Wolf.jpg"
+    override val food  = "เนื้อคน"
+    override val habitat  = "ในถ้ำ"
+
+
+    override fun makeNoise() {
+        println (" ร้องแบบหมาป่า ")
+    }
+
+    override fun eat() {
+        println ("หมาป่า กำลังกิน $food")
+    }
+}
+
 
 class Lion : Animal(){
     override val image: String
